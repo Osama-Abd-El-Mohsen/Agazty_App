@@ -4,7 +4,6 @@ from utils import load_kv_path
 load_kv_path("screens/main_screen.kv")
 
 class MainScreen(F.Screen):
-
     def on_enter(self):
         if 'Settings Screen' not in self.parent.screen_names:
                 self.parent.add_widget(self.get_screen_object_from_screen_name('Settings Screen'))

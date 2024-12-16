@@ -1,11 +1,64 @@
-#:import MDActionBottomAppBarButton kivymd.uix.appbar.MDActionBottomAppBarButton
 <SettingsScreen>:
     name: 'Settings Screen'
     app: app
-
     MDBoxLayout:
-        orientation: 'vertical'
-        spacing : dp(20)
-        halign:"center"
         theme_bg_color: "Custom"
-        
+        orientation: 'vertical'
+        padding: dp(15)
+        spacing: dp(5)
+
+
+        MDTopAppBar:
+            theme_bg_color: "Custom"
+            md_bg_color: '#101318'
+            type: "small"
+            pos_hint: {"top": 1}
+            MDTopAppBarLeadingButtonContainer:
+                MDActionTopAppBarButton:
+                    icon: "knife-military"
+                    theme_icon_color: "Custom"
+                    theme_bg_color: "Custom"
+                    theme_font_size: "Custom"
+                    font_size: dp(26)
+                    size_hint: None ,None
+                    size: dp(26), dp(26)                 
+                    md_bg_color: '#101318'
+                    icon_color: '#11ac68'
+                    disabled: 'True'
+
+            MDTopAppBarTitle:
+                text: "Agazty"
+                theme_text_color: "Custom"
+                theme_font_name: "Custom"
+                theme_font_size: "Custom"
+                font_name:"BBCairo"
+                text_color : "#11ac68"
+                font_size : dp(22)
+                pos_hint: {"center_x": .5}
+            
+            MDTopAppBarTrailingButtonContainer:
+                spacing : dp(15)
+
+            MDActionTopAppBarButton:
+                icon: "cog"
+                on_release: app.go_setting_page()  
+                theme_icon_color: "Custom"
+                theme_bg_color: "Custom"
+                theme_font_size: "Custom"
+                font_size: dp(26)
+                size_hint: None ,None
+                size: dp(26), dp(26)                 
+                md_bg_color: '#101318'
+                icon_color: '#f7f6f4'
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            theme_bg_color: "Custom"
+
+            MDDropDownItem:
+                pos_hint: {"center_x": .5, "center_y": .5}
+                on_release: app.dofaa_menu(self)
+
+                MDDropDownItemText:
+                    id: drop_text
+                    text: "Item"

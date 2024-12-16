@@ -1,10 +1,121 @@
 <MainScreen>:
     name: 'Main Screen'
     app: app
-    
     MDBoxLayout:
-        orientation: 'vertical'
-        spacing : dp(20)
-        halign:"center"
         theme_bg_color: "Custom"
-        
+        orientation: 'vertical'
+        padding: dp(15)
+        spacing: dp(5)
+
+
+        MDTopAppBar:
+            theme_bg_color: "Custom"
+            md_bg_color: '#101318'
+            type: "small"
+            pos_hint: {"top": 1}
+            MDTopAppBarLeadingButtonContainer:
+                MDActionTopAppBarButton:
+                    icon: "knife-military"
+                    theme_icon_color: "Custom"
+                    theme_bg_color: "Custom"
+                    theme_font_size: "Custom"
+                    font_size: dp(26)
+                    size_hint: None ,None
+                    size: dp(26), dp(26)                 
+                    md_bg_color: '#101318'
+                    icon_color: '#11ac68'
+                    disabled: 'True'
+
+            MDTopAppBarTitle:
+                text: "Agazty"
+                theme_text_color: "Custom"
+                theme_font_name: "Custom"
+                theme_font_size: "Custom"
+                font_name:"BBCairo"
+                text_color : "#11ac68"
+                font_size : dp(22)
+                pos_hint: {"center_x": .5}
+            
+            MDTopAppBarTrailingButtonContainer:
+                spacing : dp(15)
+
+            MDActionTopAppBarButton:
+                icon: "cog"
+                on_release: app.go_setting_page()  
+                theme_icon_color: "Custom"
+                theme_bg_color: "Custom"
+                theme_font_size: "Custom"
+                font_size: dp(26)
+                size_hint: None ,None
+                size: dp(26), dp(26)                 
+                md_bg_color: '#101318'
+                icon_color: '#f7f6f4'
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            theme_bg_color: "Custom"
+
+            id : progbar
+            progress: 0
+            height: 500
+            canvas:
+                Color:
+                    rgba: 1, 1, 1, 1  
+                Line:
+                    circle: self.center_x, self.center_y, self.height / 5  
+                    width: 3
+
+                Color:
+                    rgba: (17 / 255, 172 / 255, 104 / 255, 1)  if self.progress > 50 else (246/255, 114/255, 128/255, 1)
+                Line:
+                    width: 7
+                    circle: self.center_x, self.center_y, self.height / 5, 0, (360 * self.progress / 100  )
+
+                Color:
+                    rgba: (17 / 255, 172 / 255, 104 / 255, 1)  if self.progress > 50 else (246/255, 114/255, 128/255, 1)
+                Ellipse:
+                    pos: self.center_x - (self.height / 5 * self.progress / 100), self.center_y - (self.height / 5 * self.progress / 100)
+                    size: 2 * (self.height / 5 * self.progress / 100), 2 * (self.height / 5 * self.progress / 100)
+
+        MDBoxLayout:
+            theme_bg_color: "Custom"
+            orientation: 'vertical'
+            padding: dp(30)
+            spacing: dp(30)
+            size_hint: 1, None
+            pos_hint: {"center_x": .5, "center_y": .5}
+
+            MDLabel:
+                id : completed_percentage
+                pos_hint: {"center_x": .5, "center_y": .5}
+                theme_text_color: "Custom"
+                theme_font_name: "Custom"
+                theme_font_size: "Custom"
+                font_name:"BBCairo"
+                text_color : "#11ac68"
+                font_size : dp(22)
+                halign: "center"
+
+            MDLabel:
+                id : days_remaining
+                pos_hint: {"center_x": .5, "center_y": .5}
+                theme_text_color: "Custom"
+                theme_font_name: "Custom"
+                theme_font_size: "Custom"
+                font_name:"SBCairo"
+                text_color : "#f7f6f4"
+                font_size : dp(22)
+                halign: "center"
+
+            
+            MDLabel:
+                id : days_completed
+                pos_hint: {"center_x": .5, "center_y": .5}
+                theme_text_color: "Custom"
+                theme_font_name: "Custom"
+                theme_font_size: "Custom"
+                font_name:"SBCairo"
+                text_color : "#f7f6f4"
+                font_size : dp(22)
+                halign: "center"
+
