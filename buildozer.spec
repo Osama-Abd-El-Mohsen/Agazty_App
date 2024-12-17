@@ -1,10 +1,10 @@
 [app]
 
 # (str) Title of your application
-title = Azkary
+title = Agazty
 
 # (str) Package name
-package.name = azkar
+package.name = agazty
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.me
@@ -37,7 +37,7 @@ version = 2.4
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3, kivy==2.3.0, https://github.com/kivymd/KivyMD/archive/master.zip, materialyoucolor, exceptiongroup, asyncgui, asynckivy, Pillow,python-bidi,arabic_reshaper,plyer==2.0.0,oscpy,pandas 
+requirements = python3, kivy==2.3.0, https://github.com/kivymd/KivyMD/archive/master.zip, materialyoucolor, exceptiongroup, asyncgui, asynckivy, Pillow,oscpy 
 
 
 # (str) Custom source folders for requirements
@@ -46,10 +46,10 @@ requirements = python3, kivy==2.3.0, https://github.com/kivymd/KivyMD/archive/ma
 
 # (str) Presplash of the application
 # presplash.filename = %(source.dir)s/app_splash.png
-presplash.filename = Assets/logo.png
+# presplash.filename = Assets/logo.png
 
 # (str) Icon of the application
-icon.filename = Assets/icon.png
+# icon.filename = Assets/icon.png
 
 # (list) Supported orientations
 # Valid options are: landscape, portrait, portrait-reverse or landscape-reverse
@@ -57,7 +57,7 @@ orientation = portrait
 
 # (list) List of service to declare
 #services = NAME:ENTRYPOINT_TO_PY,NAME2:ENTRYPOINT2_TO_PY
-services = Azkar:service.py:foreground:sticky
+# services = Azkar:service.py:foreground:sticky
 
 #
 # OSX Specific
@@ -98,7 +98,7 @@ android.presplash_color = #101318
 
 # (list) Permissions
 # (See https://python-for-android.readthedocs.io/en/latest/buildoptions/#build-options-1 for all the supported syntaxes and properties)
-android.permissions = INTERNET ,READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE,FOREGROUND_SERVICE,POST_NOTIFICATIONS,android.permission.INTERNET
+# android.permissions = INTERNET ,READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE,FOREGROUND_SERVICE,POST_NOTIFICATIONS,android.permission.INTERNET
 #android.permissions = INTERNET,ACCESS_NETWORK_STATE,android.permission.INTERNET, READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE,(name=android.permission.WRITE_EXTERNAL_STORAGE;maxSdkVersion=18) 
 # (list) features (adds uses-feature -tags to manifest)
 #android.features = android.hardware.usb.host
@@ -197,7 +197,7 @@ android.accept_sdk_license = True
 # 1) A file to add to resources, legal resource names contain ['a-z','0-9','_']
 # android.add_resources = my_icons/all-inclusive.png:drawable/all_inclusive.png
 # 2) A directory, here  'legal_icons' must contain resources of one kind
-android.add_resources = data/legal_icons:drawable
+# android.add_resources = data/legal_icons:drawable
 # 3) A directory, here 'legal_resources' must contain one or more directories, 
 # each of a resource kind:  drawable, xml, etc...
 # android.add_resources = legal_resources
@@ -310,7 +310,7 @@ android.allow_backup = True
 
 # (str) The format used to package the app for release mode (aab or apk or aar).
 # android.release_artifact = aab
-android.release_artifact = aab
+android.release_artifact = apk
 
 # (str) The format used to package the app for debug mode (apk or aar).
 # android.debug_artifact = apk

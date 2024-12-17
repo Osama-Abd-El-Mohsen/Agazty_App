@@ -80,8 +80,7 @@ class MainApp(MDApp):
         print("="*10+"\n"+"From Main Load")
         print(dofaa_month)
         print("="*10)
-    
-    
+
     def save_to_JSON(self):
         self.stored_data.put('dofaa', month=dofaa_month)
 
